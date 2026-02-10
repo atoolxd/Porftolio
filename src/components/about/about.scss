@@ -1,0 +1,132 @@
+.about {
+  padding: 120px 48px;
+
+  @media (max-width: 768px) {
+    padding: 80px 20px;
+  }
+}
+
+.about-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+
+  .section-number {
+    font-family: 'Space Grotesk', monospace;
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 300px;
+  }
+}
+
+.about-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.about-text {
+  flex: 1;
+
+  p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .skills-grid {
+    margin-top: 32px;
+
+    h3 {
+      color: var(--text-primary);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 16px;
+      list-style: none;
+
+      li {
+        color: var(--text-secondary);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::before {
+          content: '\25B8';
+          color: var(--accent);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.about-image {
+  flex-shrink: 0;
+
+  .image-wrapper {
+    position: relative;
+    width: 280px;
+    height: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      width: 220px;
+      height: 260px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--accent-dim);
+      transition: background 0.4s ease;
+    }
+
+    &:hover .image-overlay {
+      background: transparent;
+    }
+  }
+}
